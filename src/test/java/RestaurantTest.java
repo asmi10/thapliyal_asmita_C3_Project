@@ -46,6 +46,15 @@ class RestaurantTest {
     	//assertEquals(false,restaurant1.isRestaurantOpen());
 
     }
+    
+    @Test
+    public void total_order_items_price_value_should_return() {
+    	Integer totalPrice = 300;
+    	restaurant.addToMenu("roti",100);
+    	restaurant.addToMenu("Dal",200);
+    	String itemList[]= {"roti", "Dal"};
+    	assertEquals(totalPrice,restaurant.getTotalPrice(itemList));
+    }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

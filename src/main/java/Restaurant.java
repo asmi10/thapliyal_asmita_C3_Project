@@ -44,6 +44,18 @@ public class Restaurant {
         menu.add(newItem);
     }
     
+    public int getTotalPrice(String [] itemList) {
+        int totalPrice = 0;
+        for (int i=0; i<itemList.length; i++ ) {
+     	   for(Item item: menu) {
+               if(item.getName().equals(itemList[i])) {
+             	  totalPrice = totalPrice + item.getPrice();
+               }
+     	   }
+         }
+        return totalPrice;
+    }        
+    
     public void removeFromMenu(String itemName) throws itemNotFoundException {
 
         Item itemToBeRemoved = findItemByName(itemName);
